@@ -19,6 +19,12 @@ class GalleryItem extends Component {
         this.setState({
         })
     }
+    handleDelete = () =>{
+        console.log('delete clicked');
+        console.log('id of picture to delete', this.props.pictureData.id);
+        this.props.deletePicture(this.props.pictureData.id)
+    }
+   
 
     render() {
         // console.log('in state: ', this.state.descriptionVisible); // log out the statut of descriptionVisible
@@ -46,21 +52,17 @@ class GalleryItem extends Component {
                     height='300px'
                     onClick={this.handleClickPicture}
                 />
-                <button>Delete</button>
-
+                <button onClick = {this.handleDelete}>Delete</button>
                 {detailDescription}
                 <div>
                     Like: {this.props.pictureData.likes}
-                    <button onClick={() => this.props.updateLike(this.props.pictureData, true)}>Like</button>
-
-
-
+                    <button 
+                    onClick={() => this.props.updateLike(this.props.pictureData, true)}>
+                        Like</button>
                 </div>
             </>
             //{detailDescription} is the description data after change event work
             // {countlike} is the like data will change after event work
-
-
         )
     }
 }

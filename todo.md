@@ -31,5 +31,8 @@
 [x] Add a form (new component) that allows a user to POST a new gallery item
     [x] Client side form (use absolute URL for images).
     [x] Server side route for posting an image.
-[] Ability to delete a gallery item
+[x] Ability to delete a gallery item
+    [x] Client
+    [x] server route
+    [x] handle delete
 

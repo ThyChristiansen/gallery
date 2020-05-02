@@ -43,7 +43,9 @@ Your project description goes here. What problem did you solve? How did you solv
 
 * Ability to delete a gallery item
     - First, I create delete button for each of the picture in `galleryItem.js`
-    -  To delete item from databasae. I also need to setup DELETE route in `gallery.router.js to remove the picture from the database.
+    -  Then I also have to setup DELETE route in `gallery.router.js to remove the picture from the database.
+    - To delete item from the client side, I create an handle delete function to delete.
+    
 
 
      
