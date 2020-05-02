@@ -11,7 +11,9 @@ class GalleryList extends Component { //create an class to store data
                             <GalleryItem 
                             key={picture.path}
                             pictureData={picture}
-                            galleryItems= {this.props.galleryItems} />
+                            galleryItems= {this.props.galleryItems} 
+                            handleClickPicture = {this.props.handleClickPicture}
+                            />
                     )
                 })}
             </>

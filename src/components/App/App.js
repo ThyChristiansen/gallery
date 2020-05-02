@@ -19,7 +19,9 @@ class App extends Component {
     this.getPictureData();
   }
 
-  
+  handleClickPicture =() =>{
+    console.log('picture clicked!');
+  }
 
   getPictureData = () =>{ // send the GET request to get pictures data from server-side 
     console.log('in GET picture data');
@@ -44,7 +46,10 @@ class App extends Component {
         </header>
         <br />
         <p>Gallery goes here</p>
-        <GalleryList galleryItems= {this.state.galleryItems}/> 
+        <GalleryList 
+        galleryItems= {this.state.galleryItems}
+        handleClickPicture = {this.handleClickPicture}
+        /> 
       </div>
 
     );
