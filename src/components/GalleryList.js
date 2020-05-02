@@ -14,6 +14,7 @@ class GalleryList extends Component { //create an class to store data
                                 key={picture.path}
                                 pictureData={picture}
                                 galleryItems={this.props.galleryItems}
+                                updateLike = {this.props.updateLike}
                             />
 
                         </>

@@ -29,8 +29,8 @@ Your project description goes here. What problem did you solve? How did you solv
 * Like button on click
     - I make it the same way with the description.
 
-
-
+* When the like button is clicked, use `Axios` to update (`PUT`) the like count `/gallery/like/:id`.
+    - In file App.js, I will create a function to update like data. Then I do the condition to when the button is clicked, the like data will have been updated
 
 
 
