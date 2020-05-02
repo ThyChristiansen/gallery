@@ -19,6 +19,8 @@ class App extends Component {
     this.getPictureData();
   }
 
+  
+
   getPictureData = () =>{ // send the GET request to get pictures data from server-side 
     console.log('in GET picture data');
     axios({ // use axios to get data

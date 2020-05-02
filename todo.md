@@ -16,9 +16,9 @@
          [x] pass the gallery data stored in `App` via `props`.
          [x] Iterate (loop over) the list of gallery data.
          [x] Display all of the images on the screen.
-     [] `GalleryItem` 
-        [] Pass the individual gallery item via `props`. 
-        [] Update the `GalleryList` to use this component to display an image.
+     [x] `GalleryItem` 
+        [x] Pass the individual gallery item via `props`. 
+        [x] Update the `GalleryList` to use this component to display an image.
         [] Swap the image with the description on click.
         [] Display the number likes for each item and include a like button.
         [] When the like button is clicked, use `Axios` to update (`PUT`) the like count `/gallery/like/:id`.

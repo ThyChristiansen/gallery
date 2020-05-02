@@ -20,7 +20,11 @@ Your project description goes here. What problem did you solve? How did you solv
 * Display all of the images on the screen.
     - To display pictures, I use .map() to loop though the galleryItems array then append display all of them from GalleryList`file.
 
+* Use new child component to store the individual gallery
+    - I create a file named `GalleryItem.js`. Then I also will connect them by import and export. 
 
+* Swap the image with the description on click.
+    - To do this, I will use Conditional Rendering.
 
 
 
