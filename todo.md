@@ -22,4 +22,12 @@
         [x] Swap the image with the description on click.
         [x] Display the number likes for each item and include a like button.
         [x] When the like button is clicked, use `Axios` to update (`PUT`) the like count `/gallery/like/:id`.
-        [] Update the gallery each time a like button is clicked.
+        [x] Update the gallery each time a like button is clicked.
+
+## Stretch
+
+[x] Create a database
+[x] create file database.sql in VS code to containt database table 
+[x] Add a form (new component) that allows a user to POST a new gallery item
+    [x] Client side form (use absolute URL for images).
+    [x] Server side route for posting an image.

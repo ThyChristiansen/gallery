@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import './App.css';
 import GalleryList from '../GalleryList';
+import GalleryForm from '../GalleryForm/GalleryForm';
 
 
 class App extends Component {
@@ -10,7 +11,7 @@ class App extends Component {
     currentPicture: {
       path: '',
       description: '',
-      like: ''
+      likes: ''
     },
   }
 
@@ -19,23 +20,40 @@ class App extends Component {
     this.getPictureData();
   }
 
+
+  addPicture = (newPicture) => {
+    console.log('in POST picture', newPicture);
+    axios({
+      url: '/gallery',
+      method: 'POST',
+      data: newPicture,
+    }).then((response) => {
+      console.log(response);
+      this.getPictureData();
+    }).catch((err) => {
+      console.log('Error in POST picture', err)
+    })
+  }
+
+
+
   updateLike = (picture, derection) => {
-    let newCount = picture.like; //create an newCount variable and set it equal new like
-    if(derection === true){ 
-      newCount +=1; // if parameter is true -> new count will increment 1
-    }else{
+    let newCount = picture.likes; //create an newCount variable and set it equal new like
+    if (derection === true) {
+      newCount += 1; // if parameter is true -> new count will increment 1
+    } else {
       newCount -= 1 //if parameter is false -> new count will decrement 1
     }
     console.log('in PUT like data');
     axios({
       url: `/gallery/like/${picture.id}`,//update the data in this address 
       method: 'PUT', //using PUT to update like counting
-      data: {like:newCount}, //update the object data like to be newCount  
+      data: { likes: newCount }, //update the object data like to be newCount  
     }).then(response => {
       console.log(response);
       this.getPictureData();//call the get request to update DOM right of the bat after we update
-    }).catch(err=>{
-      console.log('Error in update data',err);
+    }).catch(err => {
+      console.log('Error in update data', err);
     })
   }
 
@@ -49,8 +67,10 @@ class App extends Component {
       this.setState({
         galleryItems: response.data,// set the galleryItems array inside the state above that we have as a empty array to the array have data from server  
       })
+      console.log(this.state.galleryItems);
+
     }).catch(err => { //if get resquest is not successful, log out the err
-      console.log(err);
+      console.log('Error in get data',err);
     })
   }
 
@@ -61,15 +81,21 @@ class App extends Component {
           <h1 className="App-title">Gallery of my life</h1>
         </header>
         <br />
+        <GalleryForm
+          addPicture={this.addPicture}
+
+        />
         <p>Gallery goes here</p>
         <GalleryList
           galleryItems={this.state.galleryItems}
-          updateLike = {this.updateLike}
+          updateLike={this.updateLike}
+          addPicture={this.addPicture}
+
         />
       </div>
     );
   }
 }
 
-export default App;
+export default App; //export the date of App component
 

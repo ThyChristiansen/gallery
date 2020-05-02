@@ -31,7 +31,7 @@ class GalleryItem extends Component {
                 </>
             )
         }
-        let countlike;
+        // let countlike;
         // if(this.state.like){ //if the user click on the like button the like property like in state will switch to true 
         //     this.props.pictureData.likes += 1; // and if like is true, like data will increment 1
         // }else {
@@ -41,7 +41,13 @@ class GalleryItem extends Component {
         return (//return what we want to show in DOM
             <>               
 
-                <img src={this.props.pictureData.path} width='300px' height='300px' onClick={this.handleClickPicture} />
+                <img 
+                src={this.props.pictureData.path} 
+                alt="my_picture"
+                width='300px' 
+                height='300px' 
+                onClick={this.handleClickPicture} 
+                />
                 {detailDescription}
                 <div>
                     <button onClick = { () => this.props.updateLike(this.props.pictureData,true) }>Like</button>

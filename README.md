@@ -29,10 +29,19 @@ Your project description goes here. What problem did you solve? How did you solv
 * Like button on click
     - I make it the same way with the description.
 
-* When the like button is clicked, use `Axios` to update (`PUT`) the like count `/gallery/like/:id`.
-    - In file App.js, I will create a function to update like data. Then I do the condition to when the button is clicked, the like data will have been updated
+* When the like button is clicked, use `Axios` to update (`PUT`) the like count `/gallery/like/:id`. Update the gallery each time a like button is clicked.
+    - In file App.js, I will create a function to update like data. Then I do the condition to when the button is clicked, the like data will have been updated.
 
+* Create a database table 
+    - I use Postico to create my database table.
 
+* Add an new component to user can add new pictures
+    - To to this, I create an new component name GalleryForm.js to create a form for the user can input new picture. 
+        - In the form I have an input field and an button.
+    -After setup the form. In the `App.js` file, I create functions take data from the input feild send it to server and from server send it to database. 
+    - I create a `pool.js` file to setup conecting server with my database. Then I create GET, POST, PUT router in `gallery.router.js` to get data, send data, and update data between database and server.
+
+     
 
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
