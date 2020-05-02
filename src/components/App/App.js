@@ -8,7 +8,7 @@ import GalleryForm from '../GalleryForm/GalleryForm';
 
 
 class App extends Component {
-  state = {
+  state = { //save all of data in state object
     galleryItems: [],
     currentPicture: {
       path: '',
@@ -22,16 +22,16 @@ class App extends Component {
     this.getPictureData();
   }
 
-
-  addPicture = (newPicture) => {
-    console.log('in POST picture', newPicture);
+  //using POST to allow user add new picture in DOM
+  addPicture = () => {
+    console.log('in POST picture');
     axios({
       url: '/gallery',
       method: 'POST',
-      data: newPicture,
+      data: this.state.currentPicture, // send the data of properties in currentPicture object
     }).then((response) => {
       console.log(response);
-      this.getPictureData();
+      this.getPictureData(); //refest the DOM after post
     }).catch((err) => {
       console.log('Error in POST picture', err)
     })
@@ -74,18 +74,46 @@ class App extends Component {
     })
   }
 
-  deletePicture = (id) => {
+  deletePicture = (id) => { //when delete button is clicked, it will delete picture by id
     axios({
       url: `/gallery/${id}`,
       method: 'DELETE'
     })
       .then(response => {
         console.log(response);
-        this.getPictureData();
+        this.getPictureData(); //refest the DOM after delete
       }).catch(err => {
         console.log(err)
       })
   }
+
+  handleChangeFor = (event, property) => { //create handleChangeFor function and call it when the input field changes
+    this.setState({
+      currentPicture: {
+        ...this.state.currentPicture,
+        [property]: event.target.value,
+      }
+    });
+  }
+
+  handleSubmit = (event) => { // called when the add new picture is pressed
+    console.log('submit clicked!');
+    event.preventDefault();
+    this.addPicture();
+    this.clearUrlFields();
+  }
+
+
+  clearUrlFields = () => {// clear the field of the form reseting the url
+    this.setState({
+      currentPicture: {
+        path: '',
+        description: '',
+        likes: ''
+      },
+    });
+  }
+
 
   render() {
     return (//return what we want to show in DOM
@@ -95,9 +123,15 @@ class App extends Component {
         </header>
         <br />
         <main>
+          {/* Placing the form here */}
           <GalleryForm
-            addPicture={this.addPicture}
+            handleChangeFor={this.handleChangeFor}
+            handleSubmit={this.handleSubmit}
+            currentPicture={this.state.currentPicture}
           />
+          {/* <h1>{JSON.stringify(this.state.currentPicture.description)}</h1> */}
+
+          {/* Placing the picture data here */}
           <div className="list-picture">
             <GalleryList
               galleryItems={this.state.galleryItems}

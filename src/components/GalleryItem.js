@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { Button } from '@material-ui/core';
 // import DeleteIcon from '@material-ui/icons/Delete';
 // import IconButton from '@material-ui/core/IconButton';
-
-
+import swal from 'sweetalert';
 
 
 class GalleryItem extends Component {
@@ -20,17 +19,38 @@ class GalleryItem extends Component {
         })
     }
 
-    handleLikeBtn = () => { //handle like button 
-        console.log('like button clicked!')
-        this.setState({
-        })
-    }
-    handleDelete = () => {
+    // handleLikeBtn = () => { //handle like button 
+    //     console.log('like button clicked!')
+    //     this.setState({
+    //     })
+    // }
+
+    handleDelete = () => { //when user click on delete button, this function will run
+
         console.log('delete clicked');
         console.log('id of picture to delete', this.props.pictureData.id);
         this.props.deletePicture(this.props.pictureData.id)
     }
 
+    swal = ()=>{
+        swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this picture!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Poof! The picture has been deleted!", {
+            icon: "success",
+          });
+          this.handleDelete();
+        } else {
+          swal("Picture is safe!");
+        }
+      });
+    }
 
     render() {
         // console.log('in state: ', this.state.descriptionVisible); // log out the statut of descriptionVisible
@@ -46,9 +66,11 @@ class GalleryItem extends Component {
         return (//return what we want to show in DOM
             <div className="picture-data">
                 <p>Click on picture for description.</p>
+    
                 <p className= "description">
                 {detailDescription}
                  </p>
+
                 <img
                     src={this.props.pictureData.path}
                     alt="my_picture"
@@ -63,7 +85,7 @@ class GalleryItem extends Component {
                         size="small"
                         // startIcon={<DeleteIcon />}
 
-                        onClick={this.handleDelete}
+                        onClick={this.swal}
                     >
                         Delete</Button>
                 </div>

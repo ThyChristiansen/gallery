@@ -6,49 +6,36 @@ import '../App/App.css';
 
 
 
-class Picture {
-    constructor(picture = '') {
-        this.path = picture;
-    }
-};
-
 class GalleryForm extends Component {
-    state = new Picture();
 
-    handleChangeFor = (event) => { //create handleChangeFor function and call it when the input field changes
-        this.setState(new Picture(event.target.value));
-    }
 
-    handleSubmit = (event) => { // called when the add new picture is pressed
-        event.preventDefault();
-        this.props.addPicture(this.state);
-        this.clearUrlFields();
-
-    }
-
-    clearUrlFields = () => {// clear the field of the from reseting the url
-        this.setState(
-            new Picture()
-        );
-    }
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}
-                className= "SubmitForm">
-                    <p className = "form-title"> Add more picture here</p>
+                <form onSubmit={this.props.handleSubmit}
+                    className="SubmitForm">
+                    <p className="form-title"> Add more picture here</p>
+
                     <input
-                        value={this.state.path}
+                        value={this.props.currentPicture.path}
                         placeholder='Add url'
-                        onChange={this.handleChangeFor}
+                        onChange={(event) => this.props.handleChangeFor(event, 'path')}
                         name="path"
-                        className = "input-Field"
+                        className="input-field"
                     />
+                    <input
+                        value={this.props.currentPicture.description}
+                        placeholder='Add description'
+                        onChange={(event) => this.props.handleChangeFor(event, 'description')}
+                        name="description"
+                        className="input-field-description"
+                    />
+
                     <Button variant="contained"
                         type="submit"
                         value="Add picture"
                         className="root">
-                        Add picture
+                        Add
                         </Button>
                 </form>
 

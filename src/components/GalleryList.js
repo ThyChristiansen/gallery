@@ -16,12 +16,11 @@ class GalleryList extends Component { //create an class to store data
                                 updateLike={this.props.updateLike}
                                 deletePicture={this.props.deletePicture}
                             />
-
                         </>
                     )
                 })}
             </>
-            //line 11 - 14 I save the data from GalleryItem component there. Also send the stuffs that GalleryItem need to display the data
+            //I save the data from GalleryItem component.And also send the stuffs that GalleryItem need to display the data
         )
     }
 }

@@ -52,11 +52,6 @@ router.put('/like/:id', (req, res) => {
 }); // END PUT Route
 
 
-// GET Route
-// router.get('/', (req, res) => {
-//     res.send(galleryItems);
-// }); // END GET Route
-
 // When you fetch all things in these GET routes, strongly encourage ORDER BY
 // so picture data always come back in a consistent order by id
 router.get('/', (req, res) => {
@@ -75,11 +70,14 @@ router.get('/', (req, res) => {
 //POST Route
 router.post('/', (req, res) => { // use POST to sent the data that user input from database
     console.log(req.params);
-    const newPicture = req.body.path;
-    console.log(req.body.path);
+    const newPicture = req.body;
+    console.log(req.body);
+    // const newDescription = req.body.description;
+    // console.log(newDescription);
 
-    const queryString = `INSERT INTO gallery (path) VALUES ($1);`
-    pool.query(queryString, [newPicture])
+    const queryString = `INSERT INTO gallery (path,description) VALUES ($1,$2);`
+        // the $1, $2 get substituted with the values from the array below
+    pool.query(queryString, [newPicture.path, newPicture.description ])
         .then((result => {
             console.log('sending this: ', result);
             res.sendStatus(200);

@@ -45,10 +45,11 @@ Your project description goes here. What problem did you solve? How did you solv
     - First, I create delete button for each of the picture in `galleryItem.js`
     -  Then I also have to setup DELETE route in `gallery.router.js to remove the picture from the database.
     - To delete item from the client side, I create an handle delete function to delete.
-    
+    - I use SweetAlet to have a sweet alert confirm for the delete button. 
 
-
-     
+* Get description data.
+    - Frist, I create an input field for description in `GalleryForm.js` file.
+    - Then I change some code in sever router to user be able to post an array input which are picture and description.
 
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
