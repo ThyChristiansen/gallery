@@ -10,15 +10,14 @@ class GalleryItem extends Component {
         this.setState({
             // descriptionVisible: true // when the picture have been click,descriptionVisible will switch to true and show it up 
             descriptionVisible: !this.state.descriptionVisible // when the picture have been click,descriptionVisible will switch to true and show it up 
-                                                    // and the picture will go away when the user click on the picture again.
+            // and the picture will go away when the user click on the picture again.
         })
     }
 
-    handleLikeBtn = () =>{ //handle like button 
+    handleLikeBtn = () => { //handle like button 
         console.log('like button clicked!')
         this.setState({
         })
-
     }
 
     render() {
@@ -39,19 +38,22 @@ class GalleryItem extends Component {
         // }
 
         return (//return what we want to show in DOM
-            <>               
-
-                <img 
-                src={this.props.pictureData.path} 
-                alt="my_picture"
-                width='300px' 
-                height='300px' 
-                onClick={this.handleClickPicture} 
+            <>
+                <img
+                    src={this.props.pictureData.path}
+                    alt="my_picture"
+                    width='300px'
+                    height='300px'
+                    onClick={this.handleClickPicture}
                 />
+                <button>Delete</button>
+
                 {detailDescription}
                 <div>
-                    <button onClick = { () => this.props.updateLike(this.props.pictureData,true) }>Like</button>
-                    <p>Like: {this.props.pictureData.likes}</p>
+                    Like: {this.props.pictureData.likes}
+                    <button onClick={() => this.props.updateLike(this.props.pictureData, true)}>Like</button>
+
+
 
                 </div>
             </>

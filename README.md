@@ -39,7 +39,12 @@ Your project description goes here. What problem did you solve? How did you solv
     - To to this, I create an new component name GalleryForm.js to create a form for the user can input new picture. 
         - In the form I have an input field and an button.
     -After setup the form. In the `App.js` file, I create functions take data from the input feild send it to server and from server send it to database. 
-    - I create a `pool.js` file to setup conecting server with my database. Then I create GET, POST, PUT router in `gallery.router.js` to get data, send data, and update data between database and server.
+    - I create a `pool.js` file to setup conecting server with my database. Then I create GET, POST, PUT route in `gallery.router.js` to get data, send data, and update data between database and server.
+
+* Ability to delete a gallery item
+    - First, I create delete button for each of the picture in `galleryItem.js`
+    -  To delete item from databasae. I also need to setup DELETE route in `gallery.router.js to remove the picture from the database.
+
 
      
 
