@@ -26,6 +26,11 @@ Your project description goes here. What problem did you solve? How did you solv
 * Swap the image with the description on click.
     - To do this, I will use Conditional Rendering. I create a function `handleClickPicture` in the `GalleryItem.js` file to when the user click on each picture, it's description will show up.
 
+* Like button on click
+    - I make it the same way with the description.
+
+
+
 
 
 

@@ -3,6 +3,7 @@ import React, { Component } from "react";
 class GalleryItem extends Component {
     state = {
         descriptionVisible: false, // set the description to be false to hind it
+        like: false // set like to be fasle
     }
 
     handleClickPicture = () => {
@@ -14,8 +15,12 @@ class GalleryItem extends Component {
         })
     }
 
-    handleLikeBtn = () =>{
+    handleLikeBtn = () =>{ //handle like button 
         console.log('like button clicked!')
+        this.setState({
+            like: !this.state.like //when the user click on the like button, the like in state will switch to true
+        })
+
     }
 
     render() {
@@ -28,6 +33,12 @@ class GalleryItem extends Component {
                 </>
             )
         }
+        let countlike;
+        if(this.state.like){ //if the user click on the like button the like property like in state will switch to true 
+            this.props.pictureData.likes += 1; // and if like is true, like data will increment 1
+        }else {
+            this.props.pictureData.likes = 0 // if the user click like button again, it will switch to false and set the like data to be 0 
+        }
 
         return (//return what we want to show in DOM
             <>               
@@ -37,9 +48,14 @@ class GalleryItem extends Component {
                 <div>
                     <button onClick = {this.handleLikeBtn}>Like</button>
                     <p>Like: {this.props.pictureData.likes}</p>
+                    {countlike}
 
                 </div>
             </>
+            //{detailDescription} is the description data after change event work
+            //{countlike} is the like data will change after event work
+
+
         )
     }
 }
