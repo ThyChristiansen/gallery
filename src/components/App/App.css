@@ -33,10 +33,10 @@
 /* --------------------------------------------Form Style------------------------------------------------------ */
 
 .SubmitForm{
-  margin: 10px 300px;
+  margin: 10px 25%;
   padding: 20px;
-  background-color: rgb(227, 206, 178);
-  border-radius: 20px;
+  background-color: rgba(182, 132, 98, 0.132);
+  border-radius: 15px;
   border: 1px solid rgb(120, 98, 70);
 
 }
@@ -48,8 +48,23 @@
       text-decoration: underline ;
 }
 .form-title{
-
   font-family: 'Scope One', serif;
+  font-size: large;
+  font-weight:500;
+}
+
+.list-picture{
+  margin:20px 10%;
+}
+
+.picture-data{
+  font-family: 'Scope One', serif;
+  background-color: rgb(238, 233, 225);
+  margin: 10px;
+  padding: 20px;
+  text-align: left;
+  border: 1px solid black;
+  float: left;
 }
 
 .description{
@@ -59,7 +74,6 @@
 }
 
 .deleteBtn{
-  /* border :solid green; */
   float: right;
 }
 .likeBtn{
@@ -73,23 +87,6 @@
   border-radius: 100px;
   padding: 0 8px;
 }
-
-.picture-data{
-  font-family: 'Scope One', serif;
-  margin:0 10px;
-  background-color: rgb(238, 233, 225);
-  padding: 10px 0;
-
-}
-.picture-data{
-  padding: 20px;
-  text-align: left;
-  border: 1px solid black;
-  float: left;
-  margin: 10px;
-
-}
-
 
 .root{
     background: rgb(240, 205, 159);

@@ -98,7 +98,7 @@ class App extends Component {
           <GalleryForm
             addPicture={this.addPicture}
           />
-          <div className="ouput-pictures">
+          <div className="list-picture">
             <GalleryList
               galleryItems={this.state.galleryItems}
               updateLike={this.updateLike}
