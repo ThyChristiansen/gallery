@@ -11,7 +11,7 @@ class App extends Component {
       path:'',
       description:'',
       like: ''
-    }
+    },
   }
 
   componentDidMount(){ //append data from getPictureData to DOM
@@ -19,9 +19,7 @@ class App extends Component {
     this.getPictureData();
   }
 
-  handleClickPicture =() =>{
-    console.log('picture clicked!');
-  }
+ 
 
   getPictureData = () =>{ // send the GET request to get pictures data from server-side 
     console.log('in GET picture data');
@@ -39,7 +37,7 @@ class App extends Component {
   }
 
   render() {
-    return (
+    return (//return what we want to show in DOM
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of my life</h1>
@@ -48,10 +46,8 @@ class App extends Component {
         <p>Gallery goes here</p>
         <GalleryList 
         galleryItems= {this.state.galleryItems}
-        handleClickPicture = {this.handleClickPicture}
         /> 
       </div>
-
     );
   }
 }
