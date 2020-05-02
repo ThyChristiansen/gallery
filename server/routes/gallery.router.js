@@ -5,7 +5,22 @@ const pool = require('../modules/pool.js');
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 
+//DELETE Route
+router.delete('/:id',(req,res)=>{
+    let pictureId = req.params.id;// We are using a request parameter (req.params) to identify
+    // the specific picture. We expect this will be an id from the database.
 
+    console.log('Delete request for this id: ', pictureId);
+    let sqlText = `DELETE FROM gallery WHERE id = $1`;
+    pool.query(sqlText, [pictureId])
+    .then(result=>{
+        console.log('in DELETE router')
+        res.sendStatus(200);
+    }).catch(err => {
+        console.log('Error in DELETE route',err);
+        res.sendStatus(500);
+    })
+})
 
 // PUT Route
 // Change like on picture

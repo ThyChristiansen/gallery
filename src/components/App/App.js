@@ -35,8 +35,6 @@ class App extends Component {
     })
   }
 
-
-
   updateLike = (picture, derection) => {
     let newCount = picture.likes; //create an newCount variable and set it equal new like
     if (derection === true) {
@@ -74,6 +72,19 @@ class App extends Component {
     })
   }
 
+  deletePicture = (id) => {
+    axios({
+      url: `/gallery/${id}`,
+      method: 'DELETE'
+    })
+      .then(response => {
+        console.log(response);
+        this.getPictureData();
+      }).catch(err => {
+        console.log(err)
+      })
+  }
+
   render() {
     return (//return what we want to show in DOM
       <div className="App">
@@ -90,6 +101,7 @@ class App extends Component {
           galleryItems={this.state.galleryItems}
           updateLike={this.updateLike}
           addPicture={this.addPicture}
+          deletePicture={this.deletePicture}
 
         />
       </div>
