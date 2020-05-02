@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types'
 
+import Button from '@material-ui/core/Button';
+import '../App/App.css';
+
+
+
 class Picture {
     constructor(picture = '') {
-        this.path= picture;
+        this.path = picture;
     }
 };
 
@@ -17,30 +22,37 @@ class GalleryForm extends Component {
     handleSubmit = (event) => { // called when the add new picture is pressed
         event.preventDefault();
         this.props.addPicture(this.state);
-        // this.clearUrlFields();
+        this.clearUrlFields();
 
     }
 
-    // clearUrlFields = () => {// clear the field of the from reseting the url
-    //     this.setState(
-    //         new Picture()
-    //     );
-    // }
+    clearUrlFields = () => {// clear the field of the from reseting the url
+        this.setState(
+            new Picture()
+        );
+    }
     render() {
         return (
-            <>
-                <h1>hello from form</h1>
-                <form onSubmit={this.handleSubmit}>
+            <div>
+                <form onSubmit={this.handleSubmit}
+                className= "SubmitForm">
+                    <p className = "form-title"> Add more picture here</p>
                     <input
                         value={this.state.path}
                         placeholder='Add url'
                         onChange={this.handleChangeFor}
-                        name= "path"
+                        name="path"
+                        className = "input-Field"
                     />
-                    <input type="submit" value="Add picture" />
+                    <Button variant="contained"
+                        type="submit"
+                        value="Add picture"
+                        className="root">
+                        Add picture
+                        </Button>
                 </form>
 
-            </>
+            </div>
         )
     }
 }

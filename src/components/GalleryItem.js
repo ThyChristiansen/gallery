@@ -1,4 +1,10 @@
 import React, { Component } from "react";
+import { Button } from '@material-ui/core';
+// import DeleteIcon from '@material-ui/icons/Delete';
+// import IconButton from '@material-ui/core/IconButton';
+
+
+
 
 class GalleryItem extends Component {
     state = {
@@ -19,12 +25,12 @@ class GalleryItem extends Component {
         this.setState({
         })
     }
-    handleDelete = () =>{
+    handleDelete = () => {
         console.log('delete clicked');
         console.log('id of picture to delete', this.props.pictureData.id);
         this.props.deletePicture(this.props.pictureData.id)
     }
-   
+
 
     render() {
         // console.log('in state: ', this.state.descriptionVisible); // log out the statut of descriptionVisible
@@ -36,35 +42,54 @@ class GalleryItem extends Component {
                 </>
             )
         }
-        // let countlike;
-        // if(this.state.like){ //if the user click on the like button the like property like in state will switch to true 
-        //     this.props.pictureData.likes += 1; // and if like is true, like data will increment 1
-        // }else {
-        //     this.props.pictureData.likes = 0 // if the user click like button again, it will switch to false and set the like data to be 0 
-        // }
 
         return (//return what we want to show in DOM
-            <>
+            <div className="picture-data">
+                <p>Click on picture for description.</p>
+                <p className= "description">
+                {detailDescription}
+                 </p>
                 <img
                     src={this.props.pictureData.path}
                     alt="my_picture"
-                    width='300px'
-                    height='300px'
+                    width='200px'
+                    height='200px'
                     onClick={this.handleClickPicture}
                 />
-                <button onClick = {this.handleDelete}>Delete</button>
-                {detailDescription}
-                <div>
-                    Like: {this.props.pictureData.likes}
-                    <button 
-                    onClick={() => this.props.updateLike(this.props.pictureData, true)}>
-                        Like</button>
+                <div className="deleteBtn">
+                    <Button
+                        variant="contained"
+                        color="secondary"
+                        size="small"
+                        // startIcon={<DeleteIcon />}
+
+                        onClick={this.handleDelete}
+                    >
+                        Delete</Button>
                 </div>
-            </>
+
+
+                <div className="likeField">
+                    <p className="countLike">
+                        {this.props.pictureData.likes}
+                    </p>
+                    <div className="likeBtn">
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            size="small"
+                            onClick={() => this.props.updateLike(this.props.pictureData, true)}
+                        >
+                            Like
+                    </Button>
+                    </div>
+
+                </div>
+            </div>
             //{detailDescription} is the description data after change event work
             // {countlike} is the like data will change after event work
         )
     }
 }
 
-export default GalleryItem
+export default GalleryItem;
