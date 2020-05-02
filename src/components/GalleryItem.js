@@ -14,6 +14,10 @@ class GalleryItem extends Component {
         })
     }
 
+    handleLikeBtn = () =>{
+        console.log('like button clicked!')
+    }
+
     render() {
         console.log('in state: ', this.state.descriptionVisible); // log out the statut of descriptionVisible
         let detailDescription; // create a variable named detailDescription
@@ -26,10 +30,15 @@ class GalleryItem extends Component {
         }
 
         return (//return what we want to show in DOM
-            <>
+            <>               
+
                 <img src={this.props.pictureData.path} width='300px' height='300px' onClick={this.handleClickPicture} />
-                <p>Like: {this.props.pictureData.likes}</p>
                 {detailDescription}
+                <div>
+                    <button onClick = {this.handleLikeBtn}>Like</button>
+                    <p>Like: {this.props.pictureData.likes}</p>
+
+                </div>
             </>
         )
     }

@@ -7,12 +7,16 @@ class GalleryList extends Component { //create an class to store data
             //    <h4>{JSON.stringify(this.props.galleryItems)}</h4> 
             <>
                 {this.props.galleryItems.map((picture) => { //loop though the array galleyItems with paramether is picture to display pictures in DOM
-                    return (                                            
-                            <GalleryItem 
-                            key={picture.path}
-                            pictureData={picture}
-                            galleryItems= {this.props.galleryItems} 
+                    return (
+                        <>
+
+                            <GalleryItem
+                                key={picture.path}
+                                pictureData={picture}
+                                galleryItems={this.props.galleryItems}
                             />
+
+                        </>
                     )
                 })}
             </>
