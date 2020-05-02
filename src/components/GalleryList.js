@@ -9,12 +9,11 @@ class GalleryList extends Component { //create an class to store data
                 {this.props.galleryItems.map((picture) => { //loop though the array galleyItems with paramether is picture to display pictures in DOM
                     return (
                         <>
-
                             <GalleryItem
                                 key={picture.id}
                                 pictureData={picture}
                                 galleryItems={this.props.galleryItems}
-                                updateLike = {this.props.updateLike}
+                                updateLike={this.props.updateLike}
                                 deletePicture={this.props.deletePicture}
                             />
 

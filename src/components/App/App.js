@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import '../vendors/bootstrap.css';
 import './App.css';
+
 import GalleryList from '../GalleryList';
 import GalleryForm from '../GalleryForm/GalleryForm';
 
@@ -68,7 +70,7 @@ class App extends Component {
       console.log(this.state.galleryItems);
 
     }).catch(err => { //if get resquest is not successful, log out the err
-      console.log('Error in get data',err);
+      console.log('Error in get data', err);
     })
   }
 
@@ -92,18 +94,20 @@ class App extends Component {
           <h1 className="App-title">Gallery of my life</h1>
         </header>
         <br />
-        <GalleryForm
-          addPicture={this.addPicture}
+        <main>
+          <GalleryForm
+            addPicture={this.addPicture}
+          />
+          <div className="ouput-pictures">
+            <GalleryList
+              galleryItems={this.state.galleryItems}
+              updateLike={this.updateLike}
+              addPicture={this.addPicture}
+              deletePicture={this.deletePicture}
+            />
+          </div>
 
-        />
-        <p>Gallery goes here</p>
-        <GalleryList
-          galleryItems={this.state.galleryItems}
-          updateLike={this.updateLike}
-          addPicture={this.addPicture}
-          deletePicture={this.deletePicture}
-
-        />
+        </main>
       </div>
     );
   }

@@ -1,16 +1,23 @@
 .App {
   text-align: center;
+
 }
 
 .App-header {
-  background-color: #222;
-  height: 70px;
+  background-color: rgba(182, 132, 98, 0.719);
+  height: 150px;
   padding: 20px;
-  color: white;
+  color: rgba(28, 15, 6, 0.719);
+
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 3em;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin:0px;  
+  font-family: 'Dancing Script', cursive;
+
 }
 
 .App-intro {
@@ -21,3 +28,77 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+/* --------------------------------------------Form Style------------------------------------------------------ */
+
+.SubmitForm{
+  margin: 10px 300px;
+  padding: 20px;
+  background-color: rgb(227, 206, 178);
+  border-radius: 20px;
+  border: 1px solid rgb(120, 98, 70);
+
+}
+
+.input-Field{
+      margin: 0 10px;
+      font-family: 'Scope One', serif;
+      border-radius: 5px;
+      text-decoration: underline ;
+}
+.form-title{
+
+  font-family: 'Scope One', serif;
+}
+
+.description{
+  background-color: rgb(240, 205, 159);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.deleteBtn{
+  /* border :solid green; */
+  float: right;
+}
+.likeBtn{
+  float:left;
+  margin: 5px;
+}
+.countLike{
+  float: left;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 100px;
+  padding: 0 8px;
+}
+
+.picture-data{
+  font-family: 'Scope One', serif;
+  margin:0 10px;
+  background-color: rgb(238, 233, 225);
+  padding: 10px 0;
+
+}
+.picture-data{
+  padding: 20px;
+  text-align: left;
+  border: 1px solid black;
+  float: left;
+  margin: 10px;
+
+}
+
+
+.root{
+    background: rgb(240, 205, 159);
+    border: 0;
+    border-radius: 3;
+    box-shadow: '0 3px 5px 2px rgba(255, 105, 135, .3)';
+    color: 'white';
+    height: 48;
+    padding: '0 30px';
+    margin: 3px;
+};
+
