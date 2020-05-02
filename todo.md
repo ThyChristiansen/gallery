@@ -8,14 +8,14 @@
    create a gallery page to share pictures of things that are important. Visitors can click on an image to see a description and use a button to "like" an image.
 
   # Task List
-    [] Retrieve (`GET`) data from to `/gallery` and store it in `App.js`.
+    [x] Retrieve (`GET`) data from to `/gallery` and store it in `App.js`.
 
-    [] Building the gallery using mulitple components:
-      [] `App` - represents the overall application or site 
-      [] `GalleryList` 
-         [] pass the gallery data stored in `App` via `props`.
-         [] Iterate (loop over) the list of gallery data.
-         [] Display all of the images on the screen.
+    [x] Building the gallery using mulitple components:
+      [x] `App` - represents the overall application or site 
+      [x] `GalleryList` 
+         [x] pass the gallery data stored in `App` via `props`.
+         [x] Iterate (loop over) the list of gallery data.
+         [x] Display all of the images on the screen.
      [] `GalleryItem` 
         [] Pass the individual gallery item via `props`. 
         [] Update the `GalleryList` to use this component to display an image.

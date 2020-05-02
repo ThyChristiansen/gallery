@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import './App.css';
+import GalleryList from '../GalleryList';
 
 
 class App extends Component {
@@ -13,7 +14,7 @@ class App extends Component {
     }
   }
 
-  componentDidMount(){
+  componentDidMount(){ //append data from getPictureData to DOM
     console.log('App load!');
     this.getPictureData();
   }
@@ -41,14 +42,7 @@ class App extends Component {
         </header>
         <br />
         <p>Gallery goes here</p>
-        <img src="images/bridge.jpg" width='300px' height='300px' />
-        <img src="images/clif.png" width='300px' height='300px' />
-        <img src="images/flower.jpg" width='300px' height='300px' />
-        <img src="images/lake.png" width='300px' height='300px' />
-        <img src="images/river.png" width='300px' height='300px' />
-        <img src="images/window_flower.jpg" width='300px' height='300px' />
-        {JSON.stringify(this.state.galleryItems)}
-
+        <GalleryList galleryItems= {this.state.galleryItems}/> 
       </div>
 
     );

@@ -12,7 +12,14 @@ Your project description goes here. What problem did you solve? How did you solv
     -  Frist, I go to the file `gallery.data.js` in modules folder to save my pictures the data in server. 
     -  Then I go to `App.js` file to show my pictures with tag pair <img>.
     -  And to get my picture data. I have to create an GET request inside the component class to get my picture data from server. Beside send the GET request, I also create an state object to save / store my data which I will pull from server over.
-    
+
+* Passing the gallery data stored in `App` via `props` to `GalleryList` component.
+    - To do this, I create a component name `GalleryList`. Using import and export to connect component App with component GalleryList.
+    - Then I pass `galleryItems` from app to GalleryList via `props`.
+
+* Display all of the images on the screen.
+    - To display pictures, I use .map() to loop though the galleryItems array then append display all of them from GalleryList`file.
+
 
 
 
