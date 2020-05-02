@@ -5,10 +5,7 @@ import Button from '@material-ui/core/Button';
 import '../App/App.css';
 
 
-
 class GalleryForm extends Component {
-
-
     render() {
         return (
             <div>
@@ -47,6 +44,5 @@ class GalleryForm extends Component {
 GalleryForm.propTypes = {
     path: PropTypes.func.isRequired,
 };
-
 
 export default GalleryForm;

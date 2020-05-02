@@ -51,7 +51,7 @@ router.put('/like/:id', (req, res) => {
     // res.sendStatus(200);
 }); // END PUT Route
 
-
+//GET Route
 // When you fetch all things in these GET routes, strongly encourage ORDER BY
 // so picture data always come back in a consistent order by id
 router.get('/', (req, res) => {

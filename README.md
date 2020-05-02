@@ -9,22 +9,22 @@ Your project description goes here. What problem did you solve? How did you solv
 - : how I solve it
 
 *  Retrieve (`GET`) data from to `/gallery` and store it in `App.js`.
-    -  Frist, I go to the file `gallery.data.js` in modules folder to save my pictures the data in server. 
-    -  Then I go to `App.js` file to show my pictures with tag pair <img>.
-    -  And to get my picture data. I have to create an GET request inside the component class to get my picture data from server. Beside send the GET request, I also create an state object to save / store my data which I will pull from server over.
+    -  First, I go to the file `gallery.data.js` in the modules folder to save my pictures of the data in the server. 
+    -  Then I go to the `App.js` file to show my pictures with tag pair <img>.
+    -  And to get my picture data. I have to create a GET request inside the component class to get my picture data from the server. Beside send the GET request, I also create a state object to save/store my data which I will pull from the server over.
 
-* Passing the gallery data stored in `App` via `props` to `GalleryList` component.
+* Passing the gallery data stored in `App` via `props` to the `GalleryList` component.
     - To do this, I create a component name `GalleryList`. Using import and export to connect component App with component GalleryList.
-    - Then I pass `galleryItems` from app to GalleryList via `props`.
+    - Then I pass `galleryItems` from the app to GalleryList via `props`.
 
 * Display all of the images on the screen.
-    - To display pictures, I use .map() to loop though the galleryItems array then append display all of them from GalleryList`file.
+    - To display pictures, I use .map() to loop through the galleryItems array then append all of them from GalleryList`file.
 
 * Use new child component to store the individual gallery
     - I create a file named `GalleryItem.js`. Then I also will connect them by import and export. 
 
 * Swap the image with the description on click.
-    - To do this, I will use Conditional Rendering. I create a function `handleClickPicture` in the `GalleryItem.js` file to when the user click on each picture, it's description will show up.
+    - To do this, I will use Conditional Rendering. I create a function `handleClickPicture` in the `GalleryItem.js` file to when the user clicks on each picture; it's description will show up.
 
 * Like button on click
     - I make it the same way with the description.
@@ -35,21 +35,21 @@ Your project description goes here. What problem did you solve? How did you solv
 * Create a database table 
     - I use Postico to create my database table.
 
-* Add an new component to user can add new pictures
-    - To to this, I create an new component name GalleryForm.js to create a form for the user can input new picture. 
-        - In the form I have an input field and an button.
-    -After setup the form. In the `App.js` file, I create functions take data from the input feild send it to server and from server send it to database. 
-    - I create a `pool.js` file to setup conecting server with my database. Then I create GET, POST, PUT route in `gallery.router.js` to get data, send data, and update data between database and server.
+* Add a new component to the user can add new pictures
+    - To do this, I create a new component name GalleryForm.js to create a form for the user can input the new picture. 
+        - In the form, I have an input field and a button.
+    -After setup the form. In the `App.js` file, I create functions take data from the input field send it to the server and from server send it to the database. 
+    - I create a `pool.js` file to setup connecting server with my database. Then I create GET, POST, PUT route in `gallery.router.js` to get data, send data, and update data between database and server.
 
 * Ability to delete a gallery item
-    - First, I create delete button for each of the picture in `galleryItem.js`
-    -  Then I also have to setup DELETE route in `gallery.router.js to remove the picture from the database.
-    - To delete item from the client side, I create an handle delete function to delete.
+    - First, I create a delete button for each of the pictures in `galleryItem.js`
+    -  Then I also have to setup the DELETE route in `gallery.router.js to remove the image from the database.
+    - To delete the item from the client-side, I create a handle delete function to delete.
     - I use SweetAlet to have a sweet alert confirm for the delete button. 
 
 * Get description data.
-    - Frist, I create an input field for description in `GalleryForm.js` file.
-    - Then I change some code in sever router to user be able to post an array input which are picture and description.
+    - First, I create an input field for description in `GalleryForm.js` file.
+    - Then I change some code in sever router to the user be able to post an array input which is picture and description.
 
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).

@@ -103,7 +103,6 @@ class App extends Component {
     this.clearUrlFields();
   }
 
-
   clearUrlFields = () => {// clear the field of the form reseting the url
     this.setState({
       currentPicture: {
@@ -113,7 +112,6 @@ class App extends Component {
       },
     });
   }
-
 
   render() {
     return (//return what we want to show in DOM

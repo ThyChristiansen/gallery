@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Button } from '@material-ui/core';
-// import DeleteIcon from '@material-ui/icons/Delete';
-// import IconButton from '@material-ui/core/IconButton';
+
 import swal from 'sweetalert';
 
 
@@ -18,12 +17,6 @@ class GalleryItem extends Component {
             // and the picture will go away when the user click on the picture again.
         })
     }
-
-    // handleLikeBtn = () => { //handle like button 
-    //     console.log('like button clicked!')
-    //     this.setState({
-    //     })
-    // }
 
     handleDelete = () => { //when user click on delete button, this function will run
 
@@ -89,7 +82,6 @@ class GalleryItem extends Component {
                     >
                         Delete</Button>
                 </div>
-
 
                 <div className="likeField">
                     <p className="countLike">
