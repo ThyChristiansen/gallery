@@ -25,24 +25,24 @@ class GalleryItem extends Component {
         this.props.deletePicture(this.props.pictureData.id)
     }
 
-    swal = ()=>{
+    swal = () => {
         swal({
-        title: "Are you sure?",
-        text: "Once deleted, you will not be able to recover this picture!",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-      })
-      .then((willDelete) => {
-        if (willDelete) {
-          swal("Poof! The picture has been deleted!", {
-            icon: "success",
-          });
-          this.handleDelete();
-        } else {
-          swal("Picture is safe!");
-        }
-      });
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this picture!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Poof! The picture has been deleted!", {
+                        icon: "success",
+                    });
+                    this.handleDelete();
+                } else {
+                    swal("Picture is safe!");
+                }
+            });
     }
 
     render() {
@@ -58,11 +58,12 @@ class GalleryItem extends Component {
 
         return (//return what we want to show in DOM
             <div className="picture-data">
+                
                 <p>Click on picture for description.</p>
-    
-                <p className= "description">
-                {detailDescription}
-                 </p>
+
+                <p className="description">
+                    {detailDescription}
+                </p>
 
                 <img
                     src={this.props.pictureData.path}

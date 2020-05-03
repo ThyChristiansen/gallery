@@ -51,5 +51,3 @@ Your project description goes here. What problem did you solve? How did you solv
     - First, I create an input field for description in `GalleryForm.js` file.
     - Then I change some code in sever router to the user be able to post an array input which is picture and description.
 
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).

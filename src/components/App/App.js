@@ -7,6 +7,7 @@ import GalleryList from '../GalleryList';
 import GalleryForm from '../GalleryForm/GalleryForm';
 
 
+
 class App extends Component {
   state = { //save all of data in state object
     galleryItems: [],
@@ -114,13 +115,16 @@ class App extends Component {
   }
 
   render() {
+
     return (//return what we want to show in DOM
+
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of my life</h1>
         </header>
         <br />
         <main>
+          
           {/* Placing the form here */}
           <GalleryForm
             handleChangeFor={this.handleChangeFor}
@@ -128,7 +132,7 @@ class App extends Component {
             currentPicture={this.state.currentPicture}
           />
           {/* <h1>{JSON.stringify(this.state.currentPicture.description)}</h1> */}
-
+          
           {/* Placing the picture data here */}
           <div className="list-picture">
             <GalleryList
@@ -140,6 +144,7 @@ class App extends Component {
           </div>
 
         </main>
+        
       </div>
     );
   }
