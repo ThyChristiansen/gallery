@@ -6,8 +6,6 @@ import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
 import GalleryForm from '../GalleryForm/GalleryForm';
 
-
-
 class App extends Component {
   state = { //save all of data in state object
     galleryItems: [],
@@ -124,16 +122,17 @@ class App extends Component {
         </header>
         <br />
         <main>
-          
-          {/* Placing the form here */}
-          <GalleryForm
-            handleChangeFor={this.handleChangeFor}
-            handleSubmit={this.handleSubmit}
-            currentPicture={this.state.currentPicture}
-          />
-          {/* <h1>{JSON.stringify(this.state.currentPicture.description)}</h1> */}
-          
-          {/* Placing the picture data here */}
+          <section>
+            {/* Placing the form here */}
+            <GalleryForm
+              handleChangeFor={this.handleChangeFor}
+              handleSubmit={this.handleSubmit}
+              currentPicture={this.state.currentPicture}
+            />
+            {/* <h1>{JSON.stringify(this.state.currentPicture.description)}</h1> */}
+
+          </section>
+          <section>
           <div className="list-picture">
             <GalleryList
               galleryItems={this.state.galleryItems}
@@ -142,9 +141,10 @@ class App extends Component {
               deletePicture={this.deletePicture}
             />
           </div>
-
+          </section>
+          {/* Placing the picture data here */}
         </main>
-        
+
       </div>
     );
   }
