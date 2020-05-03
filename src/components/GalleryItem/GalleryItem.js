@@ -80,7 +80,7 @@ class GalleryItem extends Component {
                 <div className="deleteBtn">
                     <span className="icon-heart"
                         onClick={this.swal}>
-                        <img src="images/interface.png" width="30" height="30" ></img>
+                        <img src="images/bin.png" width="30" height="30" ></img>
                     </span>
                 </div>
                 <div>
