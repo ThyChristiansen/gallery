@@ -36,7 +36,7 @@ Your project description goes here. What problem did you solve? How did you solv
 
 * Add a new component to the user can add new pictures
     - To do this, I create a new component name GalleryForm.js to create a form for the user can input the new picture. 
-        - In the form, I have an input field and a button.
+    - In the form, I have an input field and a button.
     -After setup the form. In the `App.js` file, I create functions take data from the input field send it to the server and from server send it to the database. 
     - I create a `pool.js` file to setup connecting server with my database. Then I create GET, POST, PUT route in `gallery.router.js` to get data, send data, and update data between database and server.
 
