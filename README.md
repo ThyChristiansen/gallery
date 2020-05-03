@@ -52,6 +52,10 @@ Your project description goes here. What problem did you solve? How did you solv
     - First, I create an input field for description in `GalleryForm.js` file.
     - Then I change some code in sever router to the user be able to post an array input which is picture and description.
 
+## Screen Shot
+ My pictures project is inside the file `Project interface`
+
+
 ## Installation
 1. Create a database named your database name,
 2. The queries in the tables.sql file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on Postgres, so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries,
