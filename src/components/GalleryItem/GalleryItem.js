@@ -24,7 +24,7 @@ class GalleryItem extends Component {
 
         console.log('delete clicked');
         console.log('id of picture to delete', this.props.pictureData.id);
-        this.props.deletePicture(this.props.pictureData.id)
+        this.props.deletePicture(this.props.pictureData.id);
     }
 
     swal = () => {
@@ -71,7 +71,6 @@ class GalleryItem extends Component {
 
         return (//return what we want to show in DOM
             <div className="picture-data">
-
                 <p className="description">
                     {detailDescription}
                     {picture}

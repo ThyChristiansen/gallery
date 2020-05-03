@@ -5,6 +5,8 @@ import './App.css';
 
 import GalleryList from '../GalleryList/GalleryList';
 import GalleryForm from '../GalleryForm/GalleryForm';
+import swal from 'sweetalert';
+
 
 class App extends Component {
   state = { //save all of data in state object
@@ -31,6 +33,8 @@ class App extends Component {
     }).then((response) => {
       console.log(response);
       this.getPictureData(); //refest the DOM after post
+      swal("Added picture","", "success");
+
     }).catch((err) => {
       console.log('Error in POST picture', err)
     })
