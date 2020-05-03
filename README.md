@@ -52,3 +52,24 @@ Your project description goes here. What problem did you solve? How did you solv
     - First, I create an input field for description in `GalleryForm.js` file.
     - Then I change some code in sever router to the user be able to post an array input which is picture and description.
 
+## Installation
+1. Create a database named your database name,
+2. The queries in the tables.sql file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on Postgres, so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries,
+3. Open up your editor of choice and run an npm install
+4. Run npm run server in your terminal
+5. Run npm run client in your terminal
+6. The npm run client command will open up a new browser tab for you!
+
+## Built With
+
+HTML, CSS, JS, React, JSON, Node.js, Postico, bootstrap, material-UI, SweetAlert
+
+## Acknowledgement
+
+Thanks to Prime Digital Academy who equipped and helped me to make this application a reality. (Thank your people)
+
+## Support
+
+If you have suggestions or issues, please email me at thuvu0411@gmail.com
+
+
