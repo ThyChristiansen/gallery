@@ -24,7 +24,8 @@ Your project description goes here. What problem did you solve? How did you solv
     - I create a file named `GalleryItem.js`. Then I also will connect them by import and export. 
 
 * Swap the image with the description on click.
-    - To do this, I will use Conditional Rendering. I create a function `handleClickPicture` in the `GalleryItem.js` file to when the user clicks on each picture; it's description will show up.
+    - To do this, I will use Conditional Rendering. I create a function `handleClickPicture` in the `GalleryItem.js` file to when the user clicks on each picture; it's description will show up. And opersite when the user click on the description it will swap back to the picture.
+
 
 * Like button on click
     - I make it the same way with the description.

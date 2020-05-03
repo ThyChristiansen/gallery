@@ -11,9 +11,9 @@
 }
 
 .App-title {
-  font-size: 3em;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  font-size: 4em;
+  padding-top: 10px; 
+  align-content: center;
   margin:0px;  
   font-family: 'Dancing Script', cursive;
 }
@@ -55,6 +55,11 @@
   font-weight:500;
 }
 
+.note{
+  text-align: left;
+  margin-top: 10px;
+  font-size: 12px;
+}
 /* .drag-drop-picture{
   color:red;
   height: 350px;
@@ -67,36 +72,50 @@
 
 .list-picture{
   margin:20px 10%;
+  align-content: center;
+  /* text-align: center; */
 }
 
 .picture-data{
   font-family: 'Scope One', serif;
   background-color: rgb(238, 233, 225);
   margin: 10px;
-  padding: 20px;
+  align-content: center;
+
+  padding: 20px 20px 20px 20px;
   text-align: left;
   border: 1px solid black;
   float: left;
 }
 
+.icon-heart{
+  float: left;
+}
 .description{
-  background-color: rgb(240, 205, 159);
+  background-color: rgb(201, 194, 186);
   border-radius: 10px;
+  width: 200px;
+  height: 200px;
+ overflow-wrap: anywhere; 
+}
+.text-description{
   padding: 5px;
 }
 
 .deleteBtn{
   float: right;
+  /* margin-left: 50%; */
+  
 }
 .likeBtn{
   float:left;
-  margin: 5px;
+  /* margin: 5px; */
 }
 .countLike{
   float: left;
-  margin: 5px;
-  border: 1px solid black;
-  border-radius: 100px;
+  margin-right: 5px;
+  /* border: 1px solid black;
+  border-radius: 100px; */
   padding: 0 8px;
 }
 

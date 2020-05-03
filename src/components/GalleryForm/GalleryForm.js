@@ -35,7 +35,12 @@ class GalleryForm extends Component {
                         className="root">
                         Add
                         </Button>
+                    <p className="note">* Click on picture to show description.<br />
+                    <span>* Click on description to swap back the picture.</span></p>
+
+
                 </form>
+
 
             </div >
         )

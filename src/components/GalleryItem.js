@@ -6,6 +6,7 @@ import swal from 'sweetalert';
 
 class GalleryItem extends Component {
     state = {
+        pictureVisible: true, // set the description to be true to show it frist
         descriptionVisible: false, // set the description to be false to hind it
     }
 
@@ -13,8 +14,9 @@ class GalleryItem extends Component {
         console.log('picture clicked!');
         this.setState({
             // descriptionVisible: true // when the picture have been click,descriptionVisible will switch to true and show it up 
-            descriptionVisible: !this.state.descriptionVisible // when the picture have been click,descriptionVisible will switch to true and show it up 
+            descriptionVisible: !this.state.descriptionVisible, // when the picture have been click,descriptionVisible will switch to true and show it up 
             // and the picture will go away when the user click on the picture again.
+            pictureVisible: !this.state.pictureVisible, // the same with description
         })
     }
 
@@ -48,23 +50,15 @@ class GalleryItem extends Component {
     render() {
         // console.log('in state: ', this.state.descriptionVisible); // log out the statut of descriptionVisible
         let detailDescription; // create a variable named detailDescription
+        let picture;
         if (this.state.descriptionVisible) { // use the condition if to show picture's description if the user click on that picture
             detailDescription = ( //set detailDescription that we just create above to show the description
-                <>
-                    <p>Description: {this.props.pictureData.description}</p>
-                </>
+                <p className="text-description" onClick={this.handleClickPicture} //when the user click on description, it will show the picture
+                >Description: {this.props.pictureData.description}</p>
             )
         }
-
-        return (//return what we want to show in DOM
-            <div className="picture-data">
-                
-                <p>Click on picture for description.</p>
-
-                <p className="description">
-                    {detailDescription}
-                </p>
-
+        if (this.state.pictureVisible) {//when the user click on picture, it will show the description
+            picture = (
                 <img
                     src={this.props.pictureData.path}
                     alt="my_picture"
@@ -72,23 +66,38 @@ class GalleryItem extends Component {
                     height='200px'
                     onClick={this.handleClickPicture}
                 />
+            )
+        }
+
+        return (//return what we want to show in DOM
+            <div className="picture-data">
+
+
+                <p className="description">
+                    {detailDescription}
+                    {picture}
+                </p>
+
                 <div className="deleteBtn">
                     <Button
                         variant="contained"
                         color="secondary"
                         size="small"
-                        // startIcon={<DeleteIcon />}
-
                         onClick={this.swal}
                     >
                         Delete</Button>
                 </div>
-
+                <div></div>
                 <div className="likeField">
+                <span className= "icon-heart"
+                onClick={() => this.props.updateLike(this.props.pictureData, true)}
+                >
+                    < img src="images/heart.png" width="20" height="20" ></img>
+                    </span>
                     <p className="countLike">
                         {this.props.pictureData.likes}
                     </p>
-                    <div className="likeBtn">
+                    {/* <div className="likeBtn">
                         <Button
                             variant="contained"
                             color="primary"
@@ -96,8 +105,8 @@ class GalleryItem extends Component {
                             onClick={() => this.props.updateLike(this.props.pictureData, true)}
                         >
                             Like
-                    </Button>
-                    </div>
+                    </Button> */}
+                    {/* </div> */}
 
                 </div>
             </div>
