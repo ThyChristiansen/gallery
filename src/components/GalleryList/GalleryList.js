@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import GalleryItem from './GalleryItem';
+import GalleryItem from '../GalleryItem/GalleryItem';
 
 class GalleryList extends Component { //create an class to store data
     render() { //append data to DOM with render

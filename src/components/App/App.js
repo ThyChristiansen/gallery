@@ -3,7 +3,7 @@ import axios from 'axios'
 import '../vendors/bootstrap.css';
 import './App.css';
 
-import GalleryList from '../GalleryList';
+import GalleryList from '../GalleryList/GalleryList';
 import GalleryForm from '../GalleryForm/GalleryForm';
 
 
