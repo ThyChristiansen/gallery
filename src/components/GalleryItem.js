@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button } from '@material-ui/core';
+// import { Button } from '@material-ui/core';
 
 import swal from 'sweetalert';
 
@@ -72,27 +72,24 @@ class GalleryItem extends Component {
         return (//return what we want to show in DOM
             <div className="picture-data">
 
-
                 <p className="description">
                     {detailDescription}
                     {picture}
                 </p>
 
                 <div className="deleteBtn">
-                    <Button
-                        variant="contained"
-                        color="secondary"
-                        size="small"
-                        onClick={this.swal}
-                    >
-                        Delete</Button>
+                    <span className="icon-heart"
+                        onClick={this.swal}>
+                        <img src="images/interface.png" width="30" height="30" ></img>
+                    </span>
                 </div>
-                <div></div>
+                <div>
+
+                </div>
                 <div className="likeField">
-                <span className= "icon-heart"
-                onClick={() => this.props.updateLike(this.props.pictureData, true)}
-                >
-                    < img src="images/heart.png" width="20" height="20" ></img>
+                    <span className="icon-heart"
+                        onClick={() => this.props.updateLike(this.props.pictureData, true)}>
+                        <img src="images/heart.png" width="20" height="20" ></img>
                     </span>
                     <p className="countLike">
                         {this.props.pictureData.likes}
