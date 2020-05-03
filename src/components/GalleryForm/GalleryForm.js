@@ -5,10 +5,11 @@ import Button from '@material-ui/core/Button';
 import '../App/App.css';
 
 
+
 class GalleryForm extends Component {
     render() {
         return (
-            <div>
+            < div >
                 <form onSubmit={this.props.handleSubmit}
                     className="SubmitForm">
                     <p className="form-title"> Add more picture here</p>
@@ -36,7 +37,7 @@ class GalleryForm extends Component {
                         </Button>
                 </form>
 
-            </div>
+            </div >
         )
     }
 }
