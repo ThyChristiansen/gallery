@@ -1,4 +1,4 @@
-### Setup
+## Setup
  [x] Adding picture to `public/images folder
  [x] Running the server code requires `nodemon` or npm install nodemon --global
  [x] npm install  +   npm run server
@@ -7,7 +7,7 @@
 ## Base
    create a gallery page to share pictures of things that are important. Visitors can click on an image to see a description and use a button to "like" an image.
 
-  # Task List
+  ### Task List
     [x] Retrieve (`GET`) data from to `/gallery` and store it in `App.js`.
 
     [x] Building the gallery using mulitple components:
