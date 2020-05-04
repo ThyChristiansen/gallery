@@ -1,8 +1,7 @@
 import React, { Component } from "react";
+
 // import { Button } from '@material-ui/core';
-
-import swal from 'sweetalert';
-
+import Swal from 'sweetalert2';
 
 class GalleryItem extends Component {
     state = {
@@ -27,25 +26,48 @@ class GalleryItem extends Component {
         this.props.deletePicture(this.props.pictureData.id);
     }
 
+
     swal = () => {
-        swal({
-            title: "Are you sure?",
-            text: "Once deleted, you will not be able to recover this picture!",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
         })
-            .then((willDelete) => {
-                if (willDelete) {
-                    swal("Poof! The picture has been deleted!", {
-                        icon: "success",
-                    });
-                    this.handleDelete();
-                } else {
-                    swal("Picture is safe!");
-                }
-            });
+
+        swalWithBootstrapButtons.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.value) {
+                swalWithBootstrapButtons.fire(
+                    'Deleted!',
+                    'Your picture has been deleted.',
+                    'success'
+                )
+                this.handleDelete();
+
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire(
+                    'Cancelled',
+                    'Your picture is safe :)',
+                    'error',
+                )
+            }
+        })
     }
+
+
+
 
     render() {
         // console.log('in state: ', this.state.descriptionVisible); // log out the statut of descriptionVisible
@@ -93,7 +115,8 @@ class GalleryItem extends Component {
                     <p className="countLike">
                         {this.props.pictureData.likes}
                     </p>
-                    {/* <div className="likeBtn">
+                    
+                    {/* <div className="likeBtn"> //this is the piece of code of the like button that I created before by Material-UI
                         <Button
                             variant="contained"
                             color="primary"

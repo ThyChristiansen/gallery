@@ -5,7 +5,9 @@ import './App.css';
 
 import GalleryList from '../GalleryList/GalleryList';
 import GalleryForm from '../GalleryForm/GalleryForm';
-import swal from 'sweetalert';
+import Swal from 'sweetalert2';
+
+
 
 
 class App extends Component {
@@ -23,7 +25,13 @@ class App extends Component {
     this.getPictureData();
   }
 
+  // mouseOver =() =>{
+  //   this.state.path
+  // }
+
+
   //using POST to allow user add new picture in DOM
+  //I use Sweet Alert 2 to confirm if user successful add new picture
   addPicture = () => {
     console.log('in POST picture');
     axios({
@@ -32,8 +40,33 @@ class App extends Component {
       data: this.state.currentPicture, // send the data of properties in currentPicture object
     }).then((response) => {
       console.log(response);
-      this.getPictureData(); //refest the DOM after post
-      swal("Added picture","", "success");
+      this.getPictureData(); //refesh the DOM after post
+      let timerInterval
+      Swal.fire({
+        timer: 1000,
+        icon: 'success',
+        timerProgressBar: true,
+        onBeforeOpen: () => {
+          timerInterval = setInterval(() => {
+            const content = Swal.getContent()
+            if (content) {
+              const b = content.querySelector('b')
+              if (b) {
+                b.textContent = Swal.getTimerLeft()
+              }
+            }
+          }, 100)
+        },        
+        onClose: () => {
+          clearInterval(timerInterval)
+        },
+
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          console.log('I was closed by the timer')
+        }
+      })
 
     }).catch((err) => {
       console.log('Error in POST picture', err)
@@ -84,7 +117,7 @@ class App extends Component {
     })
       .then(response => {
         console.log(response);
-        this.getPictureData(); //refest the DOM after delete
+        this.getPictureData(); //refesh the DOM after delete
       }).catch(err => {
         console.log(err)
       })
@@ -93,17 +126,23 @@ class App extends Component {
   handleChangeFor = (event, property) => { //create handleChangeFor function and call it when the input field changes
     this.setState({
       currentPicture: {
-        ...this.state.currentPicture,
-        [property]: event.target.value,
+        ...this.state.currentPicture, //set currentPicture object is what it is
+        [property]: event.target.value, // change it after the user type in input field
       }
     });
   }
 
+
   handleSubmit = (event) => { // called when the add new picture is pressed
     console.log('submit clicked!');
-    event.preventDefault();
-    this.addPicture();
-    this.clearUrlFields();
+    if (this.state.currentPicture.path === '') {
+      alert("Please, add an url into the form!")
+    } else {
+      event.preventDefault();
+      this.addPicture();
+      this.clearUrlFields();
+    }
+
   }
 
   clearUrlFields = () => {// clear the field of the form reseting the url
@@ -134,21 +173,21 @@ class App extends Component {
               currentPicture={this.state.currentPicture}
             />
             {/* <h1>{JSON.stringify(this.state.currentPicture.description)}</h1> */}
-
           </nav>
+
           <section>
-          <div className="list-picture">
-            <GalleryList
-              galleryItems={this.state.galleryItems}
-              updateLike={this.updateLike}
-              addPicture={this.addPicture}
-              deletePicture={this.deletePicture}
-            />
-          </div>
+            <div className="list-picture">
+              <GalleryList
+                galleryItems={this.state.galleryItems}
+                updateLike={this.updateLike}
+                addPicture={this.addPicture}
+                deletePicture={this.deletePicture}
+              />
+            </div>
           </section>
           {/* Placing the picture data here */}
         </main>
-
+        
       </div>
     );
   }

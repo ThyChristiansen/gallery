@@ -64,7 +64,7 @@ Your project description goes here. What problem did you solve? How did you solv
 
 ## Built With
 
-HTML, CSS, JS, React, JSON, Node.js, Postico, bootstrap, material-UI, SweetAlert
+HTML, CSS, React, JSON, Node.js, database , Postico(database), Bootstrap, Material-UI, SweetAlert2
 
 ## Acknowledgement
 

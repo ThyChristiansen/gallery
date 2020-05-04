@@ -20,7 +20,7 @@ class GalleryList extends Component { //create an class to store data
                     )
                 })}
             </div>
-            //I save the data from GalleryItem component.And also send the stuffs that GalleryItem need to display the data
+            //I save the data from GalleryItem component here. And also send the stuffs that GalleryItem need to display the data
         )
     }
 }

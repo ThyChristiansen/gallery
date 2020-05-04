@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types'
-
-import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
 import TextField from '@material-ui/core/TextField';
 
@@ -13,6 +11,13 @@ import '../App/App.css';
 
 class GalleryForm extends Component {
     render() {
+        function mouseEnter(e) {
+            e.target.style.background = 'gray';
+          }
+          function mouseLeave(e) {
+            e.target.style.background = 'white';
+          }
+          
         return (
             < div >
                 <form onSubmit={this.props.handleSubmit}
@@ -21,19 +26,18 @@ class GalleryForm extends Component {
 
                     <Input
                         value={this.props.currentPicture.path}
-                        placeholder='Add url'
+                        placeholder='url'
                         onChange={(event) => this.props.handleChangeFor(event, 'path')}
                         name="path"
                         className="input input-url"
                         id="mui-theme-provider-standard-input"
-
                     /><br />
                     
                     <TextField
                         value={this.props.currentPicture.description}
                         onChange={(event) => this.props.handleChangeFor(event, 'description')}
                         id="outlined-multiline-static"
-                        label="Description"
+                        label=" Description"
                         multiline
                         rows={4}
                         defaultValue="Default Value"
@@ -44,8 +48,13 @@ class GalleryForm extends Component {
                     <button variant="contained"
                         type="submit"
                         value="Add picture"
-                        className="add-btn btn">
+                        className="add-btn btn"
+                        onMouseEnter={mouseEnter}
+                        onMouseLeave={mouseLeave}
+
+                        >
                         Add
+                        
                         </button>
                     <p className="note">* Click on picture to show description.<br />
                         <span>* Click on description to swap back the picture.</span></p>

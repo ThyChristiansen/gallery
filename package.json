@@ -5,13 +5,12 @@
   "proxy": "http://localhost:5000",
   "dependencies": {
     "@material-ui/core": "^4.9.12",
-  
     "axios": "^0.19.2",
     "pg": "^8.0.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "^3.4.0",
-    "sweetalert": "^2.1.2",
+    "sweetalert2": "^9.10.12",
     "uppy": "^1.14.1"
   },
   "devDependencies": {
