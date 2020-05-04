@@ -31,7 +31,6 @@
 /* --------------------------------------------Form Style------------------------------------------------------ */
 
 .SubmitForm{
- 
   background-color: rgba(182, 132, 98, 0.132);
   border-radius: 15px;
   border: 1px solid rgb(120, 98, 70);
@@ -39,17 +38,12 @@
   height: 100%;
   width: 200px;
   z-index: 1;
-  top: 0;
-  left: 0;
-  position: fixed;
+  position: center;
   overflow-x: hidden;
   padding: 20px;
-  margin-top: 160px;
-  margin-left: 10px;
-
-
-
-
+  padding-top: 30px;
+  float: left;
+  margin-left: 15px;
 
 }
 
@@ -60,10 +54,8 @@
   background-color: rgba(182, 132, 98, 0.132);
   border-radius: 4px;
   padding: 10px 0;
-  /* border: 1px solid gray; */
   
 }
-
 
 .input{
   margin: 10px 5px;
@@ -111,7 +103,7 @@
 .list-picture{
   margin:20px;
   justify-content: space-between;
-  margin-left: 210px;
+  margin-left: 240px;
 
 }
 

@@ -17,7 +17,7 @@ class GalleryForm extends Component {
             < div >
                 <form onSubmit={this.props.handleSubmit}
                     className="SubmitForm">
-                    <p className="form-title"> Add picture here</p>
+                    <p className="form-title"> Add picture here: </p>
 
                     <Input
                         value={this.props.currentPicture.path}
