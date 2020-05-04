@@ -11,11 +11,16 @@ import '../App/App.css';
 
 class GalleryForm extends Component {
     render() {
+        //effect mouse enter and mouse leave for add button
         function mouseEnter(e) {
-            e.target.style.background = 'gray';
+            e.target.style.background = '#b2a69d';
+            e.target.style.boxShadow = '1px 2px 2px gray';
+
           }
           function mouseLeave(e) {
-            e.target.style.background = 'white';
+            e.target.style.background = '#c7b7a7';
+            e.target.style.boxShadow = '1px 2px 2px lightgray';
+
           }
           
         return (
@@ -33,6 +38,8 @@ class GalleryForm extends Component {
                         id="mui-theme-provider-standard-input"
                     /><br />
                     
+                   
+
                     <TextField
                         value={this.props.currentPicture.description}
                         onChange={(event) => this.props.handleChangeFor(event, 'description')}

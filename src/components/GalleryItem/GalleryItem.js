@@ -91,17 +91,32 @@ class GalleryItem extends Component {
             )
         }
 
+        //effect mouse over and mouse leave to pictures
+        function mouseEnter(e) {
+            e.target.style.boxShadow = '1px 2px 4px gray';
+        }
+        function mouseLeave(e) {
+            e.target.style.boxShadow = '1px 2px 2px lightgray';
+
+        }
+
         return (//return what we want to show in DOM
             <div className="picture-data">
-                <p className="description">
+                <p className="description"
+                    onMouseEnter={mouseEnter}
+                    onMouseLeave={mouseLeave}
+                >
                     {detailDescription}
                     {picture}
+
                 </p>
 
                 <div className="deleteBtn">
                     <span className="icon-heart"
-                        onClick={this.swal}>
+                        onClick={this.swal}
+                    >
                         <img src="images/bin.png" width="30" height="30" ></img>
+
                     </span>
                 </div>
                 <div>
@@ -109,13 +124,14 @@ class GalleryItem extends Component {
                 </div>
                 <div className="likeField">
                     <span className="icon-heart"
-                        onClick={() => this.props.updateLike(this.props.pictureData, true)}>
+                        onClick={() => this.props.updateLike(this.props.pictureData, true)}
+                    >
                         <img src="images/heart.png" width="20" height="20" ></img>
                     </span>
                     <p className="countLike">
                         {this.props.pictureData.likes}
                     </p>
-                    
+
                     {/* <div className="likeBtn"> //this is the piece of code of the like button that I created before by Material-UI
                         <Button
                             variant="contained"
