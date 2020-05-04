@@ -31,29 +31,66 @@
 /* --------------------------------------------Form Style------------------------------------------------------ */
 
 .SubmitForm{
-  margin: 10px 25%;
-  padding: 20px;
+ 
   background-color: rgba(182, 132, 98, 0.132);
   border-radius: 15px;
   border: 1px solid rgb(120, 98, 70);
+  font-family: 'Scope One', serif; 
+  height: 100%;
+  width: 200px;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  position: fixed;
+  overflow-x: hidden;
+  padding: 20px;
+  margin-top: 160px;
+  margin-left: 10px;
+
+
+
+
+
 }
 
-.input-field{
-  margin: 0 10px;
-  font-family: 'Scope One', serif;
-  border-radius: 5px;
-  text-decoration: underline ;
-}
-.input-field-description{
-  margin: 0 10px;
-  font-family: 'Scope One', serif;
-  border-radius: 5px;
-}
 .form-title{
   font-family: 'Scope One', serif;
   font-size: large;
   font-weight:500;
+  background-color: rgba(182, 132, 98, 0.132);
+  border-radius: 4px;
+  padding: 10px 0;
+  /* border: 1px solid gray; */
+  
 }
+
+
+.input{
+  margin: 10px 5px;
+  border-radius: 5px;
+  text-decoration: underline ;
+  color: black;
+  font-size: 20px;
+  border: 1px solid gray;
+  padding: 0 5px;
+}
+
+.input-url{
+  margin-bottom: 20px;
+}
+
+.input-description{
+  margin-bottom: 20px;
+  font-family: 'Scope One', serif;
+  border-radius: 5px;
+  
+}
+
+.add-btn{
+  margin-top: 10px;
+  background-color:  rgba(182, 132, 98, 0.719);;
+}
+
 
 .note{
   text-align: left;
@@ -72,26 +109,27 @@
 
 
 .list-picture{
-  margin:20px 10%;
-  align-content: center;
-  /* text-align: center; */
+  margin:20px;
+  justify-content: space-between;
+  margin-left: 210px;
+
 }
+
 
 .picture-data{
   font-family: 'Scope One', serif;
   background-color: rgb(238, 233, 225);
   margin: 10px;
   align-content: center;
-
   padding: 20px 20px 20px 20px;
-  text-align: left;
-  border: 1px solid black;
   float: left;
+  border: 2px solid #e7e7e7;
 }
 
 .icon-heart{
   float: left;
 }
+
 .description{
   background-color: rgb(201, 194, 186);
   border-radius: 10px;
@@ -99,6 +137,7 @@
   height: 200px;
  overflow-wrap: anywhere; 
 }
+
 .text-description{
   padding: 5px;
 }
@@ -120,13 +159,3 @@
   padding: 0 8px;
 }
 
-.root{
-    background: rgb(240, 205, 159);
-    border: 0;
-    border-radius: 3;
-    box-shadow: '0 3px 5px 2px rgba(255, 105, 135, .3)';
-    color: 'white';
-    height: 48;
-    padding: '0 30px';
-    margin: 3px;
-};

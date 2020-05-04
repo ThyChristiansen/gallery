@@ -126,7 +126,7 @@ class App extends Component {
         </header>
         <br />
         <main>
-          <section>
+          <nav>
             {/* Placing the form here */}
             <GalleryForm
               handleChangeFor={this.handleChangeFor}
@@ -135,7 +135,7 @@ class App extends Component {
             />
             {/* <h1>{JSON.stringify(this.state.currentPicture.description)}</h1> */}
 
-          </section>
+          </nav>
           <section>
           <div className="list-picture">
             <GalleryList

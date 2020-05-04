@@ -5,7 +5,7 @@ class GalleryList extends Component { //create an class to store data
     render() { //append data to DOM with render
         return (
             //    <h4>{JSON.stringify(this.props.galleryItems)}</h4> 
-            <>
+            <div>
                 {this.props.galleryItems.map((picture) => { //loop though the array galleyItems with paramether is picture to display pictures in DOM
                     return (
                         <>
@@ -19,7 +19,7 @@ class GalleryList extends Component { //create an class to store data
                         </>
                     )
                 })}
-            </>
+            </div>
             //I save the data from GalleryItem component.And also send the stuffs that GalleryItem need to display the data
         )
     }
