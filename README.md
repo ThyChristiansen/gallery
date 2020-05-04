@@ -51,7 +51,10 @@ Your project description goes here. What problem did you solve? How did you solv
     - Then I change some code in sever router to the user be able to post an array input which is picture and description.
 
 ## Screen Shot
- My pictures project is inside the file `Project interface`
+
+ ![mockup one](projectInterface/pic_1.png)
+  ![mockup one](projectInterface/pic_2.png)
+
 
 
 ## Installation
