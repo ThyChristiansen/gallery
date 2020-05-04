@@ -25,10 +25,6 @@ class App extends Component {
     this.getPictureData();
   }
 
-  // mouseOver =() =>{
-  //   this.state.path
-  // }
-
 
   //using POST to allow user add new picture in DOM
   //I use Sweet Alert 2 to confirm if user successful add new picture
@@ -60,7 +56,6 @@ class App extends Component {
         onClose: () => {
           clearInterval(timerInterval)
         },
-
       }).then((result) => {
         /* Read more about handling dismissals below */
         if (result.dismiss === Swal.DismissReason.timer) {
@@ -161,7 +156,7 @@ class App extends Component {
 
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of my life</h1>
+          <h1 className="App-title">Gallery</h1>
         </header>
         <br />
         <main>

@@ -97,26 +97,28 @@ class GalleryItem extends Component {
         }
         function mouseLeave(e) {
             e.target.style.boxShadow = '1px 2px 2px lightgray';
-
         }
 
         return (//return what we want to show in DOM
             <div className="picture-data">
-                <p className="description"
-                    onMouseEnter={mouseEnter}
-                    onMouseLeave={mouseLeave}
-                >
-                    {detailDescription}
-                    {picture}
+                <div>
+                    <p className="description"
+                        onMouseEnter={mouseEnter}
+                        onMouseLeave={mouseLeave}
+                    >
+                        {detailDescription}
+                        {picture}
 
-                </p>
+                    </p>
+                    
+                </div>
+
 
                 <div className="deleteBtn">
-                    <span className="icon-heart"
+                    <span
                         onClick={this.swal}
                     >
                         <img src="images/bin.png" width="30" height="30" ></img>
-
                     </span>
                 </div>
                 <div>
@@ -128,6 +130,7 @@ class GalleryItem extends Component {
                     >
                         <img src="images/heart.png" width="20" height="20" ></img>
                     </span>
+
                     <p className="countLike">
                         {this.props.pictureData.likes}
                     </p>

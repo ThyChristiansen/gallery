@@ -20,7 +20,6 @@ class GalleryForm extends Component {
           function mouseLeave(e) {
             e.target.style.background = '#c7b7a7';
             e.target.style.boxShadow = '1px 2px 2px lightgray';
-
           }
           
         return (
@@ -58,7 +57,6 @@ class GalleryForm extends Component {
                         className="add-btn btn"
                         onMouseEnter={mouseEnter}
                         onMouseLeave={mouseLeave}
-
                         >
                         Add
                         
