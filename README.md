@@ -52,8 +52,12 @@ Your project description goes here. What problem did you solve? How did you solv
 
 ## Screen Shot
 
- ![mockup one](projectInterface/pic_1.png)
-  ![mockup one](projectInterface/pic_2.png)
+![mockup one](projectInterface/pic_1.png)
+
+![mockup one](projectInterface/pic_2.png)
+
+![mockup one](projectInterface/pic_3.png)
+
 
 
 
