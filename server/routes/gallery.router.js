@@ -30,7 +30,6 @@ router.put('/like/:id', (req, res) => {
     console.log(req.params);
     const galleryId = req.params.id;
     // likes will come from the client and say like
-    let likes = req.body.likes;
 
     let sqlText = `UPDATE gallery SET likes = likes + 1 WHERE id=$1`;
 

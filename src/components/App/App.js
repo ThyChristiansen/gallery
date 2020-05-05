@@ -3,9 +3,11 @@ import axios from 'axios'
 import '../vendors/bootstrap.css';
 import './App.css';
 
+import Header from '../Header/Header'
 import GalleryList from '../GalleryList/GalleryList';
 import GalleryForm from '../GalleryForm/GalleryForm';
 import Swal from 'sweetalert2';
+
 
 
 
@@ -137,7 +139,6 @@ class App extends Component {
       this.addPicture();
       this.clearUrlFields();
     }
-
   }
 
   clearUrlFields = () => {// clear the field of the form reseting the url
@@ -155,10 +156,7 @@ class App extends Component {
     return (//return what we want to show in DOM
 
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Gallery</h1>
-        </header>
-        <br />
+       <Header />
         <main>
           <nav>
             {/* Placing the form here */}
