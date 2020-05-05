@@ -8,20 +8,20 @@ const pool = require('../modules/pool.js');
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 
 //DELETE Route
-router.delete('/:id',(req,res)=>{
+router.delete('/:id', (req, res) => {
     let pictureId = req.params.id;// We are using a request parameter (req.params) to identify
     // the specific picture. We expect this will be an id from the database.
 
     console.log('Delete request for this id: ', pictureId);
     let sqlText = `DELETE FROM gallery WHERE id = $1`;
     pool.query(sqlText, [pictureId])
-    .then(result=>{
-        console.log('in DELETE router')
-        res.sendStatus(200);
-    }).catch(err => {
-        console.log('Error in DELETE route',err);
-        res.sendStatus(500);
-    })
+        .then(result => {
+            console.log('in DELETE router')
+            res.sendStatus(200);
+        }).catch(err => {
+            console.log('Error in DELETE route', err);
+            res.sendStatus(500);
+        })
 })
 
 // PUT Route
@@ -31,16 +31,9 @@ router.put('/like/:id', (req, res) => {
     const galleryId = req.params.id;
     // likes will come from the client and say like
     let likes = req.body.likes;
-    let sqlText = '';
 
-    if (likes === req.body.likes) {
-        // galleryItem.likes += 1;
-        // use like + 1, so it will count increment 
-        sqlText = `UPDATE gallery SET likes = likes + 1 WHERE id=$1`;
-    } else {
-        res.sendStatus(500);
-        return; // if error, this one to tell the router PUT stop here, don't run the code below
-    }
+    let sqlText = `UPDATE gallery SET likes = likes + 1 WHERE id=$1`;
+
     pool.query(sqlText, [galleryId])
         .then(result => {
             res.sendStatus(200);
@@ -77,8 +70,8 @@ router.post('/', (req, res) => { // use POST to sent the data that user input fr
     // console.log(newDescription);
 
     const queryString = `INSERT INTO gallery (path,description) VALUES ($1,$2);`
-        // the $1, $2 get substituted with the values from the array below
-    pool.query(queryString, [newPicture.path, newPicture.description ])
+    // the $1, $2 get substituted with the values from the array below
+    pool.query(queryString, [newPicture.path, newPicture.description])
         .then((result => {
             console.log('sending this: ', result);
             res.sendStatus(200);
