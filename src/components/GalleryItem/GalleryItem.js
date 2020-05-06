@@ -1,13 +1,28 @@
 import React, { Component } from "react";
 
-// import { Button } from '@material-ui/core';
 import Swal from 'sweetalert2';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+import { makeStyles } from '@material-ui/core/styles';
+
+
+
+
 
 class GalleryItem extends Component {
     state = {
         pictureVisible: true, // set the description to be true to show it frist
         descriptionVisible: false, // set the description to be false to hind it
     }
+
+    useStyles = makeStyles((theme) => ({
+        margin: {
+            margin: theme.spacing(1),
+        },
+        extendedIcon: {
+            marginRight: theme.spacing(1),
+        },
+    }));
 
     handleClickPicture = () => {
         console.log('picture clicked!');
@@ -25,7 +40,6 @@ class GalleryItem extends Component {
         console.log('id of picture to delete', this.props.pictureData.id);
         this.props.deletePicture(this.props.pictureData.id);
     }
-
 
     swal = () => {
         const swalWithBootstrapButtons = Swal.mixin({
@@ -66,9 +80,6 @@ class GalleryItem extends Component {
         })
     }
 
-
-
-
     render() {
         // console.log('in state: ', this.state.descriptionVisible); // log out the statut of descriptionVisible
         let detailDescription; // create a variable named detailDescription
@@ -99,6 +110,10 @@ class GalleryItem extends Component {
             e.target.style.boxShadow = '1px 2px 2px lightgray';
         }
 
+        const classes = this.useStyles;
+
+
+
         return (//return what we want to show in DOM
             <div className="picture-data">
                 <div>
@@ -110,7 +125,7 @@ class GalleryItem extends Component {
                         {picture}
 
                     </p>
-                    
+
                 </div>
 
 
@@ -118,9 +133,17 @@ class GalleryItem extends Component {
                     <span
                         onClick={this.swal}
                     >
-                        <img src="images/bin.png" width="30" height="30" ></img>
+                        {/* <img src="images/bin.png" width="30" height="30" ></img> */}
+                        <IconButton aria-label="delete"
+                            className={classes.margin}>
+                            <DeleteIcon />
+                        </IconButton>
                     </span>
+
                 </div>
+
+
+
                 <div>
 
                 </div>

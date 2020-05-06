@@ -3,11 +3,7 @@ import PropTypes from 'prop-types'
 import Input from '@material-ui/core/Input';
 import TextField from '@material-ui/core/TextField';
 
-
-
 import '../App/App.css';
-
-
 
 class GalleryForm extends Component {
     render() {

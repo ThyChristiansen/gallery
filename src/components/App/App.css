@@ -148,7 +148,8 @@
 }
 
 .deleteBtn{
-  float: right;  
+  float: right; 
+  margin-top: -13px;
 }
 .likeBtn{
   float:left;
