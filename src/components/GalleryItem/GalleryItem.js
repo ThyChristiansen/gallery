@@ -89,8 +89,7 @@ class GalleryItem extends Component {
         let picture;
         if (this.state.descriptionVisible) { // use the condition if to show picture's description if the user click on that picture
             detailDescription = ( //set detailDescription that we just create above to show the description
-                <p className="text-description"  
-                >Description: {this.props.pictureData.description}</p>
+                <p className="text-description">Description: {this.props.pictureData.description}</p>
             )
         }
         if (this.state.pictureVisible) {//when the user click on picture, it will show the description
