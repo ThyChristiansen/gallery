@@ -136,7 +136,7 @@ class App extends Component {
     if (this.state.currentPicture.path === '') {
       alert("Please, add an url into the form!")
     } else {
-      event.preventDefault();
+      // event.preventDefault();
       this.addPicture();
       this.clearUrlFields();
     }

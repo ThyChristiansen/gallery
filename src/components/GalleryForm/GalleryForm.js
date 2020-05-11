@@ -6,6 +6,12 @@ import TextField from '@material-ui/core/TextField';
 import '../App/App.css';
 
 class GalleryForm extends Component {
+//Press enter to add new picture
+    keyPressed=(event)=>{
+        if (event.key === "Enter") {
+            this.props.handleSubmit()
+        }
+    }
     render() {
         //effect mouse enter and mouse leave for add button
         function mouseEnter(e) {
@@ -45,6 +51,8 @@ class GalleryForm extends Component {
                         defaultValue="Default Value"
                         variant="outlined"
                         className="input-description"
+                        onKeyPress={this.keyPressed}
+
                     /><br />
 
                     <button variant="contained"
