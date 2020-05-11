@@ -71,11 +71,11 @@ Your project description goes here. What problem did you solve? How did you solv
 
 ## Built With
 
-HTML, CSS, React, JSON, Node.js, database , Postico(database), Bootstrap, Material-UI, SweetAlert2
+HTML, CSS, React, JSON, Node.js, Postico(database), Bootstrap, Material-UI, SweetAlert2
 
 ## Acknowledgement
 
-Thanks to Prime Digital Academy who equipped and helped me to make this application a reality. (Thank your people)
+Thanks to Prime Digital Academy who equipped and helped me to make this application a reality. 
 
 ## Support
 

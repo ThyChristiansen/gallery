@@ -39,6 +39,7 @@ class App extends Component {
     }).then((response) => {
       console.log(response);
       this.getPictureData(); //refesh the DOM after post
+      
       let timerInterval
       Swal.fire({
         timer: 1000,

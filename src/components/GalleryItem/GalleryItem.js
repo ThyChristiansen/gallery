@@ -7,22 +7,12 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 
-
-
 class GalleryItem extends Component {
     state = {
         pictureVisible: true, // set the description to be true to show it frist
         descriptionVisible: false, // set the description to be false to hind it
     }
 
-    useStyles = makeStyles((theme) => ({
-        margin: {
-            margin: theme.spacing(1),
-        },
-        extendedIcon: {
-            marginRight: theme.spacing(1),
-        },
-    }));
 
     handleClickPicture = () => {
         console.log('picture clicked!');
@@ -77,8 +67,21 @@ class GalleryItem extends Component {
                     'error',
                 )
             }
-        })
+        })``
     }
+
+    //--------------------------------Styling for button------------------------------------------------
+
+    useStyles = makeStyles((theme) => ({
+        margin: {
+            margin: theme.spacing(1),
+        },
+        extendedIcon: {
+            marginRight: theme.spacing(1),
+        },
+    }));
+
+    //--------------------------------Styling for button------------------------------------------------
 
     render() {
         // console.log('in state: ', this.state.descriptionVisible); // log out the statut of descriptionVisible
@@ -86,7 +89,7 @@ class GalleryItem extends Component {
         let picture;
         if (this.state.descriptionVisible) { // use the condition if to show picture's description if the user click on that picture
             detailDescription = ( //set detailDescription that we just create above to show the description
-                <p className="text-description" onClick={this.handleClickPicture} //when the user click on description, it will show the picture
+                <p className="text-description"  
                 >Description: {this.props.pictureData.description}</p>
             )
         }
@@ -116,24 +119,20 @@ class GalleryItem extends Component {
 
         return (//return what we want to show in DOM
             <div className="picture-data">
-                <div>
+                <div onClick={this.handleClickPicture}>{/* when the user click on description, it will show the picture */}
                     <p className="description"
                         onMouseEnter={mouseEnter}
                         onMouseLeave={mouseLeave}
                     >
                         {detailDescription}
                         {picture}
-
                     </p>
-
                 </div>
-
 
                 <div className="deleteBtn">
                     <span
                         onClick={this.swal}
                     >
-                        {/* <img src="images/bin.png" width="30" height="30" ></img> */}
                         <IconButton aria-label="delete"
                             className={classes.margin}>
                             <DeleteIcon />
@@ -142,16 +141,14 @@ class GalleryItem extends Component {
 
                 </div>
 
-
-
                 <div>
-
                 </div>
                 <div className="likeField">
                     <span className="icon-heart"
                         onClick={() => this.props.updateLike(this.props.pictureData, true)}
                     >
                         <img src="images/heart.png" width="20" height="20" ></img>
+
                     </span>
 
                     <p className="countLike">

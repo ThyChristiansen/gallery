@@ -12,7 +12,7 @@ class GalleryList extends Component { //create an class to store data
                             <GalleryItem
                                 key={picture.id}
                                 pictureData={picture}
-                                galleryItems={this.props.galleryItems}
+                                // galleryItems={this.props.galleryItems}
                                 updateLike={this.props.updateLike}
                                 deletePicture={this.props.deletePicture}
                             />
