@@ -75,7 +75,11 @@ HTML, CSS, React, JSON, Node.js, Postico(database), Bootstrap, Material-UI, Swee
 
 ## Acknowledgement
 
+<<<<<<< HEAD
 Thanks to Prime Digital Academy who equipped and helped me to make this application a reality. 
+=======
+Thanks to Prime Digital Academy who equipped and helped me to make this application a reality.
+>>>>>>> 9f2eca8b96d894bfcf6eb569a34a94a5704a5339
 
 ## Support
 
